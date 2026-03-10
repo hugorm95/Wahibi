@@ -73,7 +73,7 @@
   .hero-meta { display: flex; flex-direction: column; gap: 0.3rem; opacity: 0; animation: fadeUp 0.8s 0.6s forwards; }
   .hero-meta span { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--dark); opacity: 0.85; }
   .hero-right { background: var(--dark); display: flex; align-items: flex-end; justify-content: center; padding-top: 5rem; overflow: hidden; position: relative; }
-  .hero-right img { width: 85%; max-width: 420px; object-fit: contain; object-position: bottom; display: block; opacity: 0; animation: fadeUp 0.8s 0.4s forwards; position: relative; z-index: 2; }
+  .hero-right img { width: 85%; max-width: 420px; object-fit: contain; object-position: bottom; display: block; opacity: 0; animation: fadeUp 0.8s 0.4s forwards; position: relative; z-index: 10; }
 
 
   .hero-text { position: relative; z-index: 2; }
@@ -261,6 +261,10 @@
     overflow: hidden;
     z-index: 1;
   }
+  .hero-right .chilli-rain-canvas {
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 38%, transparent 60%);
+    mask-image: linear-gradient(to bottom, black 0%, black 38%, transparent 60%);
+  }
   .chilli-rain-drop {
     position: absolute;
     top: -30px;
@@ -331,51 +335,8 @@
   <div style="max-width:1200px; margin:0 auto 3rem;">
     <h2 class="section-title roomies-title">Roomies</h2>
   </div>
-  <div style="max-width:1200px; margin:0 auto; display:flex; flex-direction:column; gap:4px;">
-    <div class="rooms-grid">
-      <div class="room-card">
-        <div class="room-img"><img src="room-sizzlesuite.png" alt="The Pepper Pod" /></div>
-        <div class="room-info">
-          <div class="room-name">The Pepper Pod</div>
-          <div class="room-size">1 King</div>
-          <div class="room-guests">Leans &middot; Shmeag</div>
-        </div>
-      </div>
-      <div class="room-card">
-        <div class="room-img"><img src="room-sizzlesuite-new.png" alt="The Sizzle Suite" /></div>
-        <div class="room-info">
-          <div class="room-name">The Sizzle Suite</div>
-          <div class="room-size">1 Queen</div>
-          <div class="room-guests">Lolo &middot; Whit</div>
-        </div>
-      </div>
-      <div class="room-card">
-        <div class="room-img"><img src="room-heatwave-new.png" alt="The Heat Wave" /></div>
-        <div class="room-info">
-          <div class="room-name">The Heat Wave</div>
-          <div class="room-size">1 Queen</div>
-          <div class="room-guests">Kayla &middot; Kelsey</div>
-        </div>
-      </div>
-    </div>
-    <div class="rooms-grid-bottom">
-    <div class="room-card">
-      <div class="room-img"><img src="hotbox.png" alt="The Hot Box" /></div>
-      <div class="room-info">
-        <div class="room-name">The Hot Box</div>
-        <div class="room-size">1 Queen</div>
-        <div class="room-guests">Amelia &middot; Karisa</div>
-      </div>
-    </div>
-    <div class="room-card">
-      <div class="room-img"><img src="room-spicerack.png" alt="The Spice Rack" /></div>
-      <div class="room-info">
-        <div class="room-name">The Spice Rack</div>
-        <div class="room-size">Queen / Full Bunks</div>
-        <div class="room-guests">Amber &middot; Kady &middot; Haley &middot; Kenz &middot; Lardo &middot; Maia &middot; Wasabi</div>
-      </div>
-    </div>
-  </div>
+  <div style="max-width:1200px; margin:0 auto; padding-bottom:2rem;">
+    <p style="font-family:'Cormorant Garamond', serif; font-size:2.5rem; font-weight:400; color:white; font-style:italic; letter-spacing:0.04em;">Coming soon!</p>
   </div>
 </div>
 
@@ -397,7 +358,7 @@
         <li>Settle in</li>
         <li>Hot tub &amp; sauna</li>
         <li>Pizza delivery &amp; birthday cake</li>
-        <li>Bars in Wicker Park</li>
+        <li>House party at Casa Fuego</li>
       </ul>
     </div>
     <div class="day-photo"><img src="itinerary-pizza.jpg" alt="Thursday pizza" /></div>
@@ -408,11 +369,11 @@
       <div class="day-name" style="color:var(--red);">Friday</div>
       <div class="day-date">April 17</div>
       <ul class="day-activities">
-        <li>Brunch at <a href="https://maps.app.goo.gl/wSx1UdhZYtZcHws39" target="_blank">Doma Cafe</a></li>
-        <li>Chicago River Walk</li>
+        <li>Brunch out ~11AM</li>
         <li>Millennium Park &amp; The Bean</li>
+        <li>Chicago River Walk</li>
         <li>Grilling at Home</li>
-        <li>Dad's Night Out</li>
+        <li>Dad's Night Out on the Town</li>
       </ul>
     </div>
     <div class="day-photo"><img src="itinerary-dad.jpg" alt="Dad's Night" /></div>
@@ -423,6 +384,7 @@
       <div class="day-name">Saturday</div>
       <div class="day-date">April 18</div>
       <ul class="day-activities">
+        <li>Sleep In</li>
         <li>Breakfast at Home</li>
         <li>Baseball Game at Wrigley Field<br><span style="font-size:0.75em; opacity:0.6; font-weight:500; letter-spacing:0.08em;">Cubs vs. Mets @ 1:20PM</span></li>
         <li>Dinner &amp; Bars in Wrigleyville</li>
@@ -465,7 +427,7 @@
     </div>
     <div class="pack-tile">
       <img src="orig-thursday.png" alt="Thursday Night" style="object-position: center 35%; transform: scale(1.3); transform-origin: center 35%;" />
-      <div class="pack-tile-label">Thursday Night Outfit</div>
+      <div class="pack-tile-label">Thursday Houseparty Outfit<span class="pack-tile-sub">Something spicy!!</span></div>
     </div>
     <div class="pack-tile">
       <img src="orig-brunch.png" alt="Brunch Outfit" />
@@ -486,7 +448,7 @@
 <div class="forms-section" id="forms">
   <div class="forms-header">
     <p class="forms-title">Fill These Out</p>
-    <p class="forms-sub">ASAP or by April 10th</p>
+    <p class="forms-sub">ASAP or by April 5th</p>
   </div>
   <div class="forms-inner">
     <a class="form-card" href="https://forms.gle/1ZS7Bxk2prNcWxDu6" target="_blank">
@@ -517,7 +479,11 @@
   function addMixedRain(container, count) {
     var canvas = document.createElement('div');
     canvas.className = 'chilli-rain-canvas';
+    canvas.style.zIndex = '1';
     container.insertBefore(canvas, container.firstChild);
+    // Ensure direct img children (the girl) always sit above the rain canvas
+    var imgs = container.querySelectorAll(':scope > img');
+    imgs.forEach(function(img) { img.style.zIndex = '20'; img.style.position = 'relative'; });
     for (var i = 0; i < count; i++) {
       var el = document.createElement('span');
       el.className = 'chilli-rain-drop';
